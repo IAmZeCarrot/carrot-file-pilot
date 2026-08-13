@@ -229,10 +229,8 @@ class PilotWindow:
 
 def main() -> None:
     root = tk.Tk()
-    try:
+    with suppress(tk.TclError):
         ttk.Style().theme_use("vista")
-    except tk.TclError:
-        pass
     PilotWindow(root)
     root.mainloop()
 
