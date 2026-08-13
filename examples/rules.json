@@ -1,0 +1,10 @@
+{
+  "collision": "rename",
+  "recursive": false,
+  "include_hidden": false,
+  "rules": [
+    {"name": "receipts", "destination": "Finance/Receipts", "extensions": [".pdf"], "names": ["receipt"]},
+    {"name": "photos", "destination": "Pictures/Incoming", "extensions": [".jpg", ".jpeg", ".png"]}
+  ]
+}
+
