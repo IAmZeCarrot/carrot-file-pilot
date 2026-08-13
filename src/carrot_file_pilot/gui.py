@@ -20,7 +20,9 @@ class PilotWindow:
         self.session = DesktopSession()
         self.target = tk.StringVar()
         self.config = tk.StringVar()
-        self.status = tk.StringVar(\n            value="Choose a folder, then preview. Nothing moves automatically."\n        )
+        self.status = tk.StringVar(
+            value="Choose a folder, then preview. Nothing moves automatically."
+        )
         self._build()
         self._sync_actions()
 
