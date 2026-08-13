@@ -26,7 +26,8 @@ jobs:
           --onefile
           --windowed
           --clean
-          src/carrot_file_pilot/gui.py
+          --paths src
+          packaging/windows_launcher.py
       - uses: actions/upload-artifact@v4
         with:
           name: CarrotFilePilot-Windows
