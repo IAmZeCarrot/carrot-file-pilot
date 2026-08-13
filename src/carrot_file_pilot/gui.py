@@ -139,7 +139,10 @@ class PilotWindow:
             if failed:
                 messagebox.showwarning(
                     "Finished with errors",
-                    f"{failed} move(s) failed. No destination was overwritten.\n\nJournal: {journal}",
+                    (
+                        f"{failed} move(s) failed. No destination was overwritten.\\n\\n"
+                        f"Journal: {journal}"
+                    ),
                     parent=self.root,
                 )
             else:
@@ -171,7 +174,10 @@ class PilotWindow:
             return
         if not messagebox.askyesno(
             "Undo organized files?",
-            (\n                "Restore completed moves from this journal? "\n                "Occupied original paths will be left alone."\n            ),
+            (
+                "Restore completed moves from this journal? "
+                "Occupied original paths will be left alone."
+            ),
             parent=self.root,
         ):
             return
