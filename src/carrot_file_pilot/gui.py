@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import tkinter as tk
+from contextlib import suppress
 from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 
@@ -170,7 +171,7 @@ class PilotWindow:
             return
         if not messagebox.askyesno(
             "Undo organized files?",
-            "Restore completed moves from this journal? Occupied original paths will be left alone.",
+            (\n                "Restore completed moves from this journal? "\n                "Occupied original paths will be left alone."\n            ),
             parent=self.root,
         ):
             return
