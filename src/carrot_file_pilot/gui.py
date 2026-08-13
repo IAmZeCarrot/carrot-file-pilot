@@ -203,17 +203,21 @@ class PilotWindow:
         self._sync_actions()
 
     def _show(self, operations: list[Operation]) -> None:
-        for item in self.table.get_children():
-            self.table.delete(item)
-        for item in operations:
+        for tree_item in self.table.get_children():
+            self.table.delete(tree_item)
+        for operation in operations:
             self.table.insert(
                 "",
                 tk.END,
                 values=(
-                    item.status.value,
-                    str(item.source),
-                    str(item.destination),
-                    item.rule if item.detail is None else f"{item.rule}: {item.detail}",
+                    operation.status.value,
+                    str(operation.source),
+                    str(operation.destination),
+                    (
+                        operation.rule
+                        if operation.detail is None
+                        else f"{operation.rule}: {operation.detail}"
+                    ),
                 ),
             )
 
